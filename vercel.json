@@ -10,7 +10,7 @@
       }
     },
     {
-      "src": "portfolio/static/**",
+      "src": "staticfiles/**",
       "use": "@vercel/static"
     }
   ],
