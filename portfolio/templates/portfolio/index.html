@@ -1,0 +1,443 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ✏️ CUSTOMIZE: Update name and description -->
+  <title>{{ name }} — Portfolio</title>
+  <meta name="description" content="{{ name }} — {{ title }}" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ LOADER ═══ -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-ring"></div>
+    <span class="loader-text">Loading</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ CURSOR ═══ -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- ═══════════════════════════════════════ NAVBAR ═══ -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a class="nav-logo" href="#home">
+      <span class="logo-bracket">{</span>
+      {{ name|truncatewords:1 }}
+      <span class="logo-bracket">}</span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+      <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      <li><a href="#ai-assistant" class="nav-link" data-section="ai-assistant">AI Chat</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#home" class="mobile-link">Home</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#portfolio" class="mobile-link">Portfolio</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="#ai-assistant" class="mobile-link">AI Chat</a>
+</div>
+
+<!-- ═══════════════════════════════════════ HOME ═══ -->
+<section id="home" class="section hero-section">
+  <!-- Animated background grid -->
+  <div class="hero-grid"></div>
+  <!-- Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge animate-fade-up" style="animation-delay:0.1s">
+      <span class="badge-dot"></span>
+      Available for work
+    </div>
+
+    <h1 class="hero-title animate-fade-up" style="animation-delay:0.2s">
+      <span class="title-line">Hi, I'm</span>
+      <!-- ✏️ CUSTOMIZE: Your name -->
+      <span class="title-name">{{ name }}</span>
+    </h1>
+
+    <p class="hero-subtitle animate-fade-up" style="animation-delay:0.35s">
+      {{ title }}
+    </p>
+
+    <p class="hero-tagline animate-fade-up" style="animation-delay:0.5s">
+      {{ tagline }}
+    </p>
+
+    <div class="hero-cta animate-fade-up" style="animation-delay:0.65s">
+      <a href="#portfolio" class="btn btn-primary">View My Work <i data-lucide="arrow-right" class="btn-icon"></i></a>
+      <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+    </div>
+
+    <div class="hero-scroll animate-fade-up" style="animation-delay:0.8s">
+      <a href="#about" class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line">
+          <div class="scroll-dot"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Floating code snippet decoration -->
+  <div class="hero-code animate-float">
+    <div class="code-window">
+      <div class="code-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <pre class="code-content"><span class="c-kw">const</span> <span class="c-var">developer</span> = {
+  <span class="c-key">name</span>: <span class="c-str">"{{ name }}"</span>,
+  <span class="c-key">passion</span>: <span class="c-str">"building things"</span>,
+  <span class="c-key">coffee</span>: <span class="c-num">∞</span>,
+  <span class="c-key">status</span>: <span class="c-str">"open to work"</span> <span class="c-cmt">✓</span>
+};</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ ABOUT ═══ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">01 / About</span>
+      <h2 class="section-title">The Human Behind the Code</h2>
+    </div>
+
+    <div class="about-grid">
+      <!-- Avatar / Visual -->
+      <div class="about-visual reveal">
+        <div class="avatar-wrapper">
+          <div class="avatar-ring"></div>
+          <div class="avatar-placeholder">
+            <!-- Girl cartoon avatar -->
+            <img src="{% static 'images/avatar-girl.svg' %}" alt="{{ name }}" class="avatar-img" />
+          </div>
+          <!-- Fix 4: Removed 4+ Years Exp badge -->
+        </div>
+
+        <!-- Fix 6: 10+ Projects, no Clients, 5 Certs -->
+        <div class="about-stats">
+          <div class="stat-card">
+            <strong>10+</strong>
+            <span>Projects</span>
+          </div>
+          <div class="stat-card">
+            <strong>5</strong>
+            <span>Certs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="about-text reveal" style="animation-delay:0.15s">
+        <p class="about-intro">{{ about_text }}</p>
+        <p class="about-body">{{ about_text_2 }}</p>
+
+        <div class="about-info">
+          <div class="info-item">
+            <i data-lucide="map-pin" class="info-icon"></i>
+            <span>{{ location }}</span>
+          </div>
+          <div class="info-item">
+            <i data-lucide="mail" class="info-icon"></i>
+            <span>{{ email }}</span>
+          </div>
+        </div>
+
+        <a href="{% url 'download_cv' %}" class="btn btn-primary download-btn">
+          <i data-lucide="download" class="btn-icon"></i>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ EXPERIENCE ═══ -->
+<section id="experience" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">02 / Experience</span>
+      <h2 class="section-title">My Journey So Far</h2>
+    </div>
+
+    <div class="experience-timeline">
+      {% for exp in experiences %}
+      <div class="exp-card reveal" style="animation-delay:{{ forloop.counter0 }}00ms">
+        <div class="exp-icon">{{ exp.icon }}</div>
+        <div class="exp-body">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-role">{{ exp.role }}</h3>
+              <p class="exp-company">{{ exp.company }}</p>
+            </div>
+            <span class="exp-period">{{ exp.period }}</span>
+          </div>
+          <p class="exp-desc">{{ exp.description }}</p>
+          <div class="exp-tags">
+            {% for tag in exp.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ PORTFOLIO ═══ -->
+<section id="portfolio" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">03 / Portfolio</span>
+      <h2 class="section-title">Things I've Built & Earned</h2>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="tab-nav reveal">
+      <button class="tab-btn active" data-tab="projects">
+        <i data-lucide="folder-open"></i> Projects
+      </button>
+      <button class="tab-btn" data-tab="certificates">
+        <i data-lucide="award"></i> Certificates
+      </button>
+      <button class="tab-btn" data-tab="techstack">
+        <i data-lucide="cpu"></i> Tech Stack
+      </button>
+    </div>
+
+    <!-- ── Projects Tab ── -->
+    <div class="tab-content active" id="tab-projects">
+      <div class="projects-grid">
+        {% for project in projects %}
+        <div class="project-card reveal" style="animation-delay:{{ forloop.counter0 }}00ms">
+          <div class="project-top">
+            <span class="project-emoji">{{ project.emoji }}</span>
+            {% if project.featured %}
+            <span class="project-badge">Featured</span>
+            {% endif %}
+          </div>
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-desc">{{ project.description }}</p>
+          <div class="project-tags">
+            {% for tag in project.tags %}
+            <span class="tag tag-sm">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <div class="project-links">
+            <a href="{{ project.github }}" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">
+              <i data-lucide="github"></i> GitHub
+            </a>
+            {% if project.demo %}
+            <a href="{{ project.demo }}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+              <i data-lucide="external-link"></i> Live
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- ── Certificates Tab ── -->
+    <div class="tab-content" id="tab-certificates">
+      <div class="certs-grid">
+        {% for cert in certificates %}
+        <div class="cert-card reveal cert-{{ cert.color }}" style="animation-delay:{{ forloop.counter0 }}00ms">
+          <div class="cert-badge-icon">{{ cert.badge }}</div>
+          <div class="cert-body">
+            <h3 class="cert-title">{{ cert.title }}</h3>
+            <p class="cert-issuer">{{ cert.issuer }}</p>
+            <span class="cert-date">
+              <i data-lucide="calendar"></i> {{ cert.date }}
+            </span>
+          </div>
+          <div class="cert-verified">
+            <i data-lucide="shield-check"></i> Verified
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- ── Tech Stack Tab ── -->
+    <div class="tab-content" id="tab-techstack">
+      <div class="techstack-wrapper">
+        {% for category, skills in tech_stack.items %}
+        <div class="techstack-section reveal">
+          <h3 class="techstack-section-title">{{ category }}</h3>
+          <div class="techstack-icon-grid">
+            {% for skill in skills %}
+            <div class="tech-icon-card">
+              <div class="tech-icon-circle">
+                <span class="tech-icon-emoji">{{ skill.icon }}</span>
+              </div>
+              <span class="tech-icon-name">{{ skill.name }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ CONTACT ═══ -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">04 / Contact</span>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-sub">Have a project in mind? I'd love to hear about it. Let's build something great together.</p>
+    </div>
+
+    <div class="contact-grid contact-grid-3">
+      <a href="mailto:{{ email }}" class="contact-card contact-card-v2 reveal" style="animation-delay:0s">
+        <div class="contact-icon-wrap email-icon">
+          <i data-lucide="mail"></i>
+        </div>
+        <div class="contact-text">
+          <h3 class="contact-label">Email</h3>
+          <p class="contact-value">{{ email }}</p>
+        </div>
+        <i data-lucide="arrow-up-right" class="contact-arrow"></i>
+      </a>
+
+      <a href="{{ github_url }}" target="_blank" rel="noopener" class="contact-card contact-card-v2 reveal" style="animation-delay:0.1s">
+        <div class="contact-icon-wrap github-icon">
+          <i data-lucide="github"></i>
+        </div>
+        <div class="contact-text">
+          <h3 class="contact-label">GitHub</h3>
+          <p class="contact-value">RiyaRojesara</p>
+        </div>
+        <i data-lucide="arrow-up-right" class="contact-arrow"></i>
+      </a>
+
+      <a href="{{ linkedin_url }}" target="_blank" rel="noopener" class="contact-card contact-card-v2 reveal" style="animation-delay:0.2s">
+        <div class="contact-icon-wrap linkedin-icon">
+          <i data-lucide="linkedin"></i>
+        </div>
+        <div class="contact-text">
+          <h3 class="contact-label">LinkedIn</h3>
+          <p class="contact-value">riya-rojesara</p>
+        </div>
+        <i data-lucide="arrow-up-right" class="contact-arrow"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ AI ASSISTANT ═══ -->
+<section id="ai-assistant" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">05 / AI Assistant</span>
+      <h2 class="section-title">Ask Me Anything</h2>
+      <p class="section-sub">Have a question about my work, skills, or availability? My AI assistant is here to help!</p>
+    </div>
+
+    <div class="chat-wrapper reveal">
+      <div class="chat-window" id="chat-window">
+        <!-- Welcome message -->
+        <div class="chat-msg bot-msg">
+          <div class="msg-avatar bot-avatar">🤖</div>
+          <div class="msg-bubble">
+            <p>Hey! 👋 I'm {{ name }}'s virtual assistant. Ask me about her AI/ML skills, projects, experience, or how to get in touch!</p>
+            <span class="msg-time">Just now</span>
+          </div>
+        </div>
+
+        <!-- Quick suggestions -->
+        <div class="chat-suggestions" id="suggestions">
+          <button class="suggestion-btn" onclick="sendSuggestion(this)">What's your tech stack?</button>
+          <button class="suggestion-btn" onclick="sendSuggestion(this)">Tell me about your projects</button>
+          <button class="suggestion-btn" onclick="sendSuggestion(this)">What is LangGraph?</button>
+          <button class="suggestion-btn" onclick="sendSuggestion(this)">How do I contact you?</button>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <div class="chat-input-wrap">
+          <input
+            type="text"
+            id="chat-input"
+            class="chat-input"
+            placeholder="Ask me anything about {{ name }}..."
+            autocomplete="off"
+            maxlength="200"
+          />
+          <button id="chat-send" class="chat-send-btn" aria-label="Send message">
+            <i data-lucide="send"></i>
+          </button>
+        </div>
+        <p class="chat-hint">Press Enter to send · Powered by smart rules, no API key needed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-copy">
+        &copy; 2025 <strong>{{ name }}</strong> — Crafted with ❤️ and Django
+      </p>
+      <div class="footer-links">
+        <a href="{{ github_url }}" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
+        <a href="{{ linkedin_url }}" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a>
+        <a href="mailto:{{ email }}"><i data-lucide="mail"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-to-top" aria-label="Back to top">
+  <i data-lucide="arrow-up"></i>
+</button>
+
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

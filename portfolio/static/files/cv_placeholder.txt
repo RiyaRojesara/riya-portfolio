@@ -1,0 +1,11 @@
+PLACEHOLDER - Replace this file with your actual CV PDF.
+
+File path: portfolio/static/files/cv.pdf
+
+Steps:
+1. Create your CV as a PDF
+2. Name it cv.pdf
+3. Place it at: portfolio/static/files/cv.pdf
+4. Run: python manage.py collectstatic
+
+The "Download CV" button will then serve your real PDF.

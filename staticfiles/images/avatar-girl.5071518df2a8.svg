@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="100" fill="#0d1220"/>
+  
+  <!-- Body / shoulders -->
+  <ellipse cx="100" cy="175" rx="52" ry="38" fill="#1e1b4b"/>
+  <ellipse cx="100" cy="165" rx="38" ry="26" fill="#312e81"/>
+
+  <!-- Neck -->
+  <rect x="88" y="128" width="24" height="20" rx="8" fill="#f5c5a3"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="108" rx="42" ry="44" fill="#f5c5a3"/>
+
+  <!-- Hair - long dark hair -->
+  <ellipse cx="100" cy="90" rx="44" ry="30" fill="#1a0a00"/>
+  <!-- left hair -->
+  <path d="M58 100 Q48 130 52 160 Q62 140 68 128 Z" fill="#1a0a00"/>
+  <!-- right hair -->
+  <path d="M142 100 Q152 130 148 160 Q138 140 132 128 Z" fill="#1a0a00"/>
+  <!-- hair top flow -->
+  <ellipse cx="100" cy="78" rx="42" ry="22" fill="#1a0a00"/>
+  <!-- hair part highlight -->
+  <path d="M100 68 Q105 72 108 82" stroke="#2d1500" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Ears -->
+  <ellipse cx="58" cy="110" rx="7" ry="9" fill="#f5c5a3"/>
+  <ellipse cx="142" cy="110" rx="7" ry="9" fill="#f5c5a3"/>
+
+  <!-- Eyes -->
+  <!-- Left eye -->
+  <ellipse cx="84" cy="108" rx="9" ry="10" fill="white"/>
+  <circle cx="84" cy="109" r="6" fill="#1a0a00"/>
+  <circle cx="84" cy="109" r="3.5" fill="#3b1f00"/>
+  <circle cx="86" cy="107" r="1.5" fill="white"/>
+  <!-- Right eye -->
+  <ellipse cx="116" cy="108" rx="9" ry="10" fill="white"/>
+  <circle cx="116" cy="109" r="6" fill="#1a0a00"/>
+  <circle cx="116" cy="109" r="3.5" fill="#3b1f00"/>
+  <circle cx="118" cy="107" r="1.5" fill="white"/>
+
+  <!-- Eyebrows -->
+  <path d="M75 97 Q84 93 93 96" stroke="#1a0a00" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M107 96 Q116 93 125 97" stroke="#1a0a00" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Eyelashes top left -->
+  <path d="M76 100 Q74 96 73 94" stroke="#1a0a00" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M93 100 Q94 96 96 94" stroke="#1a0a00" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Eyelashes top right -->
+  <path d="M108 100 Q106 96 104 94" stroke="#1a0a00" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M124 100 Q126 96 127 94" stroke="#1a0a00" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M97 116 Q100 122 103 116" stroke="#e8a882" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Mouth - smile -->
+  <path d="M89 130 Q100 140 111 130" stroke="#c0725a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M91 130 Q100 136 109 130" fill="#e8826a" opacity="0.4"/>
+
+  <!-- Cheeks blush -->
+  <ellipse cx="76" cy="122" rx="9" ry="6" fill="#f9a8a8" opacity="0.45"/>
+  <ellipse cx="124" cy="122" rx="9" ry="6" fill="#f9a8a8" opacity="0.45"/>
+
+  <!-- Laptop on body -->
+  <rect x="72" y="162" width="56" height="32" rx="4" fill="#0f172a"/>
+  <rect x="74" y="164" width="52" height="26" rx="3" fill="#1e293b"/>
+  <!-- Screen content - code lines -->
+  <rect x="78" y="168" width="30" height="2" rx="1" fill="#6ee7b7" opacity="0.8"/>
+  <rect x="78" y="172" width="20" height="2" rx="1" fill="#818cf8" opacity="0.7"/>
+  <rect x="82" y="176" width="24" height="2" rx="1" fill="#6ee7b7" opacity="0.5"/>
+  <rect x="82" y="180" width="16" height="2" rx="1" fill="#f472b6" opacity="0.6"/>
+  <!-- Keyboard base -->
+  <rect x="68" y="193" width="64" height="6" rx="3" fill="#0f172a"/>
+
+  <!-- Headphone / earring left -->
+  <circle cx="59" cy="113" r="3" fill="#6ee7b7"/>
+  <!-- Earring right -->
+  <circle cx="141" cy="113" r="3" fill="#6ee7b7"/>
+</svg>
